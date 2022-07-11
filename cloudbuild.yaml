@@ -4,11 +4,9 @@ steps:
   args: ["install"]
 - name: node:10.15.1
   entrypoint: npm
-  args: ["run", "create-env"]
+  env_variables:
   # env:
   #   - 'STRIPE_SECRET_KEY=${_STRIPE_SECRET_KEY}'
 - name: "gcr.io/cloud-builders/gcloud"
   args: ["app", "deploy"]
 timeout: "1600s"
-options:
- logging: CLOUD_LOGGING_ONLY
