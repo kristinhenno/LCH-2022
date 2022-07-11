@@ -4,7 +4,7 @@ steps:
   args: ["install"]
 - name: node:10.15.1
   entrypoint: npm
-  env_variables:
+  # env_variables:
   # env:
   #   - 'STRIPE_SECRET_KEY=${_STRIPE_SECRET_KEY}'
 - name: "gcr.io/cloud-builders/gcloud"
