@@ -3,4 +3,4 @@ steps:
   entrypoint: yarn
   args: ['install'] 
 options:
- logging: CLOUD_LOGGING_ONLY
+  logging: CLOUD_LOGGING_ONLY
