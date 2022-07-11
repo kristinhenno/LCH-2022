@@ -16,8 +16,6 @@ import {
     Link
 } from "react-router-dom";
 import InstagramFeed from './Instafeed';
-import CoverScroll from './CoverScroll'
-import Home from './Home'
 require('typeface-quicksand')
 
 

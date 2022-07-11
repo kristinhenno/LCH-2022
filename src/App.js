@@ -1,7 +1,6 @@
 import './App.css';
 import Instafeed from './Instafeed'
 import Nav from './Nav'
-import Home from './Home'
 import { makeStyles } from '@material-ui/core/styles';
 import {
   BrowserRouter as Router,
