@@ -15,7 +15,7 @@
 # runtime: nodejs12
 # [END gae_quickstart_yaml]
 
-runtime: nodejs12
+runtime: nodejs14
 handlers:
 # Serve all static files with url ending with a file extension
 - url: /(.*\..+)$
