@@ -7,7 +7,6 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import image1 from './images/homepage/1.jpg'
 import './App.css';
 import {
     BrowserRouter as Router,
@@ -16,6 +15,7 @@ import {
     Link
 } from "react-router-dom";
 import InstagramFeed from './Instafeed';
+import Home from './Home';
 require('typeface-quicksand')
 
 
@@ -24,7 +24,7 @@ const useStyles = makeStyles(() => ({
     tab: {
         opacity: '0.85',
         zIndex: 1,
-        position: 'relative'
+        position: 'relative',
     },
     hamburger: {
         width: '25px',
@@ -46,15 +46,15 @@ const useStyles = makeStyles(() => ({
     },
     logo: {
         width: '370px',
-        margin: '1% 5% 0 3%'
+        margin: '1% 5% 0 10%'
     },
     navContainer: {
         textAlign: 'left',
-        padding: '0.75% 3%',
+        padding: '1.5% 3%',
         zIndex: 10000,
-        position: 'relative'
-        // borderBottom: '1px solid #e1e0e1',
-        // paddingBottom: '1%',
+        position: 'fixed',
+        top: 0,
+        width: '100%'
     },
     list: {
         width: 250,
@@ -71,18 +71,20 @@ const useStyles = makeStyles(() => ({
 
     navText: {
         fontFamily: 'Quicksand! important',
-        // fontWeight: 'lighter',
         margin: '2.6% 0',
         fontSize: '16px',
         color: 'black',
-        fontWeight: '500'
+        fontWeight: '500',
+        opacity: 1,
+        zIndex: 100000000,
 
     },
     layout: {
-        margin: '5vh 3%'
+    },
+    logoDiv: {
+        display: 'inline-block'
     }
 }
-
 ))
 
 
@@ -133,10 +135,6 @@ function Nav() {
                         <ListItemText className={classes.navText}>  <Link style={{ textDecoration: 'none' }} to="/insta"> <p className={classes.navText} >  &nbsp; &nbsp;  - i n s t a </p></Link></ListItemText>
                     </ListItem>
                     <br></br>
-                    {/* <ListItem>
-                        <ListItemText className={classes.navText}> <p className={classes.navText} >  &nbsp; &nbsp;  - s h o p &nbsp; l o l o </p></ListItemText>
-                    </ListItem>
-                    <br></br> */}
                     <ListItem>
                         <ListItemText className={classes.navText}> <p className={classes.navText} >  &nbsp; &nbsp;  - c i a o</p></ListItemText>
                     </ListItem>
@@ -148,7 +146,7 @@ function Nav() {
             <div className={classes.hamburgerBox}>
                 {['left'].map((anchor) => (
                     <React.Fragment key={anchor}>
-                        <div style={{ width: "25px" }}>
+                        <div style={{ cursor: 'pointer', width: "25px" }}>
                             <img onClick={toggleDrawer(anchor, state.left ? false : true)} className={state.left ? classes.x : classes.hamburger} src={state.left ? x : hamburger} />
                         </div>
                         <Drawer elevation={0} className={classes.tab} anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
@@ -162,17 +160,16 @@ function Nav() {
 
 
     return (
-        <div style={{ backgroundImage: `url(${image1})`, height: '100vh' }}>
+        <div>
             <Router>
                 <div className={classes.navContainer}>
                     <TemporaryDrawer />
-                    {/* <img className={classes.hamburger} src={hamburger} /> */}
-                    <Link to="/"><img className={classes.logo} src={logo} /></Link>
+                    <Link className={classes.logoDiv} to="/"><img className={classes.logo} src={logo} /></Link>
                 </div>
                 <div className={classes.layout}>
                     <Switch>
                         <Route exact path="/">
-                            {/* <Home /> */}
+                            <Home />
                         </Route>
                         <Route path="/insta">
                             <InstagramFeed />
@@ -180,7 +177,7 @@ function Nav() {
                     </Switch>
                 </div>
             </Router>
-        </div>
+        </div >
     );
 }
 
