@@ -10,16 +10,12 @@ steps:
     - name: 'gcr.io/cloud-builders/yarn'
       dir: 'client'
       args: ['install']
-      options:
-  logging: CLOUD_LOGGING_ONLY
       timeout: 400s
 
     # Step 1: Build the react client
     - name: 'gcr.io/cloud-builders/yarn'
       dir: 'client'
       args: ['build']
-      options:
-  logging: CLOUD_LOGGING_ONLY
       timeout: 400s
 
     #  # Step 2: Install deps for server
@@ -36,9 +32,11 @@ steps:
     # Step 3: FRONTEND Deploy cloud app frontend
     - name: 'gcr.io/cloud-builders/gcloud'
       args: ['app', 'deploy', 'app.yaml']
-      options:
-  logging: CLOUD_LOGGING_ONLY
       timeout: 3600s
+
+
+options:
+  logging: CLOUD_LOGGING_ONLY
 
       
 
