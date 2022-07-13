@@ -11,6 +11,24 @@
   margin-top: 0;
 }
 
+/* .scrollMenu {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin-bottom: 9vh;
+  position: relative;
+  width: auto;
+}
+
+.img {
+  height: 81vh;
+  width: auto;
+  opacity: 1;
+  transition: .5s ease;
+  position: relative;
+  backface-visibility: hidden;
+} */
+
 
 
 

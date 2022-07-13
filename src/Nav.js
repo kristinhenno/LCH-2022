@@ -16,6 +16,10 @@ import {
 } from "react-router-dom";
 import InstagramFeed from './Instafeed';
 import Home from './Home';
+import Portfolio from './Portfolio';
+import Casita from './Casita';
+
+
 require('typeface-quicksand')
 
 
@@ -46,22 +50,19 @@ const useStyles = makeStyles(() => ({
     },
     logo: {
         width: '370px',
-        margin: '1% 5% 0 10%'
+        margin: '5px 0 0 30px'
     },
     navContainer: {
         textAlign: 'left',
-        padding: '1.5% 3%',
+        margin: '18px 35px',
         zIndex: 10000,
-        position: 'fixed',
+        position: 'relative',
         top: 0,
-        width: '100%'
+        overflowX: "hidden"
     },
     list: {
         width: 250,
 
-    },
-    fullList: {
-        width: 'auto',
     },
 
     tabText: {
@@ -82,13 +83,20 @@ const useStyles = makeStyles(() => ({
     layout: {
     },
     logoDiv: {
-        display: 'inline-block'
+        display: 'inline-block',
+        position: 'relative',
+        zIndex: '10000'
+    },
+    navLink: {
+        textDecoration: 'none',
+        cursor: 'pointer'
     }
 }
 ))
 
 
 function Nav() {
+
     const classes = useStyles();
 
     function TemporaryDrawer() {
@@ -120,7 +128,7 @@ function Nav() {
                     </ListItem>
                     <br></br>
                     <ListItem >
-                        <ListItemText className={classes.navText} ><p className={classes.navText} >  &nbsp; &nbsp; - p o r t f o l i o </p></ListItemText>
+                        <ListItemText className={classes.navText} ><Link className={classes.navLink} to="/portfolio"><p className={classes.navText} >  &nbsp; &nbsp; - p o r t f o l i o </p></Link></ListItemText>
                     </ListItem>
                     <br></br>
                     <ListItem>
@@ -132,7 +140,7 @@ function Nav() {
                     </ListItem>
                     <br></br>
                     <ListItem>
-                        <ListItemText className={classes.navText}>  <Link style={{ textDecoration: 'none' }} to="/insta"> <p className={classes.navText} >  &nbsp; &nbsp;  - i n s t a </p></Link></ListItemText>
+                        <ListItemText className={classes.navText}>  <Link className={classes.navLink} to="/insta"> <p className={classes.navText} >  &nbsp; &nbsp;  - i n s t a </p></Link></ListItemText>
                     </ListItem>
                     <br></br>
                     <ListItem>
@@ -171,8 +179,14 @@ function Nav() {
                         <Route exact path="/">
                             <Home />
                         </Route>
-                        <Route path="/insta">
+                        {/* <Route path="/insta">
                             <InstagramFeed />
+                        </Route> */}
+                        <Route exact path="/portfolio">
+                            <Portfolio />
+                        </Route>
+                        <Route exact path="/portfolio/casita">
+                            <Casita />
                         </Route>
                     </Switch>
                 </div>
