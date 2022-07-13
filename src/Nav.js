@@ -35,9 +35,10 @@ import Luxe from './press/Luxe';
 import Micasa from './press/Micasa';
 import Micasa2 from './press/Micasa2';
 import Mydomaine from './press/Mydomaine';
-import Sbls from './press/Sbls';
-import Sbls2 from './press/Sbls2';
+import Sbls from './press/Sbls2';
+import Sbls2 from './press/Sbls';
 import Sbmag from './press/Sbmag';
+import MeetLolo from './pages/MeetLolo';
 
 require('typeface-quicksand')
 
@@ -143,7 +144,7 @@ function Nav() {
             >
                 <List className={classes.tabText}>
                     <ListItem  >
-                        <ListItemText><p className={classes.navText} > &nbsp; &nbsp; - m e e t &nbsp; l o l o </p></ListItemText>
+                        <ListItemText className={classes.navText}><Link className={classes.navLink} to="/meet-lolo"><p className={classes.navText} > &nbsp; &nbsp; - m e e t &nbsp; l o l o </p></Link></ListItemText>
                     </ListItem>
                     <br></br>
                     <ListItem >
@@ -206,6 +207,9 @@ function Nav() {
                         </Route>
                         <Route exact path="/press">
                             <Press />
+                        </Route>
+                        <Route exact path="/meet-lolo">
+                            <MeetLolo />
                         </Route>
                         <Route exact path="/portfolio/casita">
                             <Casita />
