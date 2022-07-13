@@ -19,7 +19,7 @@ const useStyles = makeStyles(() => ({
         lineHeight: 2.8,
         color: '#767777',
         letterSpacing: '2px',
-        fontFamily: 'Quicksand, sans-serif'
+        fontFamily: 'Quicksand! important',
     },
     loloImg: {
         flex: 4,
