@@ -13,5 +13,6 @@ export const img = {
     opacity: 1,
     transition: '.5s ease',
     position: 'relative',
-    backfaceVisibility: 'hidden'
+    backfaceVisibility: 'hidden',
+    margin: '0 1% 0 0',
 }

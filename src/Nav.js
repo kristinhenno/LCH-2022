@@ -14,11 +14,30 @@ import {
     Route,
     Link
 } from "react-router-dom";
-import InstagramFeed from './Instafeed';
-import Home from './Home';
-import Portfolio from './Portfolio';
-import Casita from './Casita';
-
+import InstagramFeed from './pages/Instafeed';
+import Home from './pages/Home';
+import Portfolio from './pages/Portfolio';
+import Casita from './portfolio/Casita';
+import Press from './pages/Press';
+import Boho from './portfolio/Boho';
+import Bungalow from './portfolio/Bungalow';
+import Cabana from './portfolio/Cabana';
+import Hacienda from './portfolio/Hacienda';
+import Maison from './portfolio/Maison';
+import Ch from './press/Ch';
+import Cowboy from './press/Cowboy';
+import Domino from './press/Domino';
+import Domino2 from './press/Domino2';
+import Eg from './press/Eg';
+import Eg2 from './press/Eg2';
+import Gg from './press/Gg';
+import Luxe from './press/Luxe';
+import Micasa from './press/Micasa';
+import Micasa2 from './press/Micasa2';
+import Mydomaine from './press/Mydomaine';
+import Sbls from './press/Sbls';
+import Sbls2 from './press/Sbls2';
+import Sbmag from './press/Sbmag';
 
 require('typeface-quicksand')
 
@@ -136,7 +155,7 @@ function Nav() {
                     </ListItem>
                     <br></br>
                     <ListItem>
-                        <ListItemText className={classes.navText}> <p className={classes.navText} > &nbsp; &nbsp;  - p r e s s</p></ListItemText>
+                        <ListItemText className={classes.navText}> <Link className={classes.navLink} to="/press"><p className={classes.navText} > &nbsp; &nbsp;  - p r e s s</p></Link></ListItemText>
                     </ListItem>
                     <br></br>
                     <ListItem>
@@ -185,8 +204,68 @@ function Nav() {
                         <Route exact path="/portfolio">
                             <Portfolio />
                         </Route>
+                        <Route exact path="/press">
+                            <Press />
+                        </Route>
                         <Route exact path="/portfolio/casita">
                             <Casita />
+                        </Route>
+                        <Route exact path="/portfolio/bungalow">
+                            <Bungalow />
+                        </Route>
+                        <Route exact path="/portfolio/hacienda">
+                            <Hacienda />
+                        </Route>
+                        <Route exact path="/portfolio/cabana">
+                            <Cabana />
+                        </Route>
+                        <Route exact path="/portfolio/maison">
+                            <Maison />
+                        </Route>
+                        <Route exact path="/portfolio/boho">
+                            <Boho />
+                        </Route>
+                        <Route exact path="/press/sbls">
+                            <Sbls />
+                        </Route>
+                        <Route exact path="/press/luxe">
+                            <Luxe />
+                        </Route>
+                        <Route exact path="/press/ch">
+                            <Ch />
+                        </Route>
+                        <Route exact path="/press/sb">
+                            <Sbmag />
+                        </Route>
+                        <Route exact path="/press/sbls2">
+                            <Sbls2 />
+                        </Route>
+                        <Route exact path="/press/cowboys">
+                            <Cowboy />
+                        </Route>
+                        <Route exact path="/press/domino">
+                            <Domino />
+                        </Route>
+                        <Route exact path="/press/domino2">
+                            <Domino2 />
+                        </Route>
+                        <Route exact path="/press/domaine">
+                            <Mydomaine />
+                        </Route>
+                        <Route exact path="/press/micasa">
+                            <Micasa />
+                        </Route>
+                        <Route exact path="/press/micasa2">
+                            <Micasa2 />
+                        </Route>
+                        <Route exact path="/press/eg">
+                            <Eg />
+                        </Route>
+                        <Route exact path="/press/eg2">
+                            <Eg2 />
+                        </Route>
+                        <Route exact path="/press/glitter">
+                            <Gg />
                         </Route>
                     </Switch>
                 </div>
