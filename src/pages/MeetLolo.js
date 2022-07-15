@@ -20,6 +20,7 @@ const useStyles = makeStyles(() => ({
         color: '#767777',
         letterSpacing: '2px',
         fontFamily: 'Quicksand! important',
+        fontWeight: 500
     },
     loloImg: {
         flex: 4,

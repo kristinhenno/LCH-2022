@@ -39,6 +39,7 @@ import Sbls from './press/Sbls2';
 import Sbls2 from './press/Sbls';
 import Sbmag from './press/Sbmag';
 import MeetLolo from './pages/MeetLolo';
+import Ciao from './pages/Ciao';
 
 require('typeface-quicksand')
 
@@ -164,7 +165,7 @@ function Nav() {
                     </ListItem>
                     <br></br>
                     <ListItem>
-                        <ListItemText className={classes.navText}> <p className={classes.navText} >  &nbsp; &nbsp;  - c i a o</p></ListItemText>
+                        <ListItemText className={classes.navText}>  <Link className={classes.navLink} to="/ciao"><p className={classes.navText} >  &nbsp; &nbsp;  - c i a o</p></Link></ListItemText>
                     </ListItem>
                 </List>
             </div>
@@ -270,6 +271,9 @@ function Nav() {
                         </Route>
                         <Route exact path="/press/glitter">
                             <Gg />
+                        </Route>
+                        <Route exact path="/ciao">
+                            <Ciao />
                         </Route>
                     </Switch>
                 </div>
