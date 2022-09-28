@@ -7,8 +7,8 @@
   }
   .instagramItem {
     -webkit-box-flex: 0;
-    flex: 0 0 calc(100%/4 - 20px);
-    margin: 10px;
+    flex: 0 0 calc(100%/5 - 16px);
+    margin: 8px;
     display: block;
     position: relative;
   }
@@ -56,6 +56,11 @@
     background-position: center;
     will-change: opacity;
   }
+
+.caption{
+    width: 100%;
+    margin: 0% 5%;
+}
 
   @media (max-width: 480px) {
     

@@ -13,7 +13,7 @@ class InstagramFeed extends Component {
     }
 
     componentDidMount() {
-        let url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url&&access_token=IGQVJXb29uQ3ZAZATjBOWXpKU09Bazd4VmxWQlhMbkxsNXhsdk4zM0JqdW40d3UtY1Mybk93NmQ3RDNtOVpVUWFxb2s0aWlXTThDUzdra1lJUnpKeXp3VUUtcU10a1dTZAzl0bUZAXd1VJbkl3SVVrWDJuWAZDZD`;
+        let url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,caption&&access_token=IGQVJYdndIYTVUeDlhbDhYZAndVUjdfRGZAIMU8wM2oxcDNwcWs1SVVDa0YwSnZAGRXI4NHMxTW1IQzRWMVpYZAnM5UlV5a3VDQm5fQVhxYk1nSUVUdmY5S2xHMEJQMmN1YTlMNEp2MWRUcWFFUk03RnUzYgZDZD`;
         fetch(url)
             .then((response) => {
                 return response.json();
@@ -50,12 +50,12 @@ class InstagramFeed extends Component {
 
         if (isError) {
             return <div className={styles.errorMessage}>
-                <p> the access token is not valid</p>
+                {console.log('access token invalid')}
             </div>;
         } else if (!isLoaded) {
             return <div> Loading... </div>;
         } else {
-            // console.log(feeds);
+            console.log(feeds);
             return (
                 <div style={{ backgroundColor: "white" }} className={styles.instagramItems}>
                     {feeds.slice(0, 24).map((feed, index) => (
@@ -77,8 +77,10 @@ class InstagramFeed extends Component {
                                     <video className={styles.instagramImg} key={index} src={feed.media_url} type="video/mp4"></video>
                                 }
                                 <div className={styles.instagramIcon}>
-                                    <div className="instagram-count-item">
+                                    <div className={styles.caption}>
                                         <span className="icon">
+
+                                            <p>{feed.caption}</p>
                                             {/*change your svg icon*/}
 
                                             <svg height="18" viewBox="0 0 512 512" width="18">

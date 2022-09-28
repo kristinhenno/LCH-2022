@@ -200,9 +200,9 @@ function Nav() {
                         <Route exact path="/">
                             <Home />
                         </Route>
-                        {/* <Route path="/insta">
+                        <Route path="/insta">
                             <InstagramFeed />
-                        </Route> */}
+                        </Route>
                         <Route exact path="/portfolio">
                             <Portfolio />
                         </Route>
