@@ -13,7 +13,7 @@ class InstagramFeed extends Component {
     }
 
     componentDidMount() {
-        let url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,caption&&access_token=IGQVJYdndIYTVUeDlhbDhYZAndVUjdfRGZAIMU8wM2oxcDNwcWs1SVVDa0YwSnZAGRXI4NHMxTW1IQzRWMVpYZAnM5UlV5a3VDQm5fQVhxYk1nSUVUdmY5S2xHMEJQMmN1YTlMNEp2MWRUcWFFUk03RnUzYgZDZD`;
+        let url = `https://graph.instagram.com/me/media?fields=media_count,media_type,permalink,media_url,caption&&access_token=IGQVJYRkNzb204bFd4LUY1YXZACRFBnYks2SzdZAYk56RjZA3MnFlZA3pyUWtmNzUyeEJxYklRb2lDVE5fZA2h4YS1FSllzenpTQWFPVmpVbkVHZAzBMWUZAvZA1NNcUIyNHRPWFg1ZAFdyYzVUa09PTTFKM0E2QgZDZD`;
         fetch(url)
             .then((response) => {
                 return response.json();
